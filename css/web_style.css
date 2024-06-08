@@ -1,0 +1,253 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background-image: url('../web_images/bg_cafe.jpg');
+  background-size: cover;
+  background-position: center;
+}
+body::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgb(0, 0, 0);
+  opacity: 0.4;
+  z-index: -1;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+
+/* HEADER ---------------- */
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 20px;
+  position: relative;
+}
+.header-container {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .logo {
+  height: 70px;
+  width: auto;
+}
+
+.main-nav ul {
+  display: flex;
+}
+.main-nav ul {
+  list-style: none;
+}
+/* .main-nav ul li {
+  display: inline-block;
+} */
+.main-nav ul li a {
+  text-decoration: none;
+  color: black;
+  margin-left: 30px;
+  font-weight: 600;
+  color: white;
+  transition: all 0.3s;
+}
+.main-nav ul li a:hover {
+  color: #767685;
+}
+.main-nav ul li .contact {
+  display: block;
+  background: #da9168;
+  border-radius: 15px;
+  padding: 5px 20px;
+}
+
+/* MAIN CONTENTS ---------------- */
+main {
+  background: url(../images/bg.png) repeat center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+main h1 {
+  margin-bottom: 15px;
+  font-size: 65px;
+  line-height: 1;
+}
+main h1 span {
+  font-size: 50px;
+}
+main p {
+  font-size: 30px;
+  font-weight: 600;
+}
+main .button-area {
+  margin-top: 40px;
+}
+.button-area button {
+  padding: 8px 100px;
+  background: #da9168;
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+  letter-spacing: 0.3rem;
+}
+.button-area .free {
+  margin-right: 30px;
+}
+.button-area button:hover {
+  color: #767685;
+}
+@media (max-width: 600px) {
+  .keyvisual {
+    min-height: 100vh;
+    padding-top: 20%;
+  }
+  .keyvisual h1 p button {
+    flex-direction: column;
+    align-items: center;
+  }
+  .keyvisual p {
+    font-size: 1rem;
+  }
+}
+/* cursor stalker */
+#cursor {
+  pointer-events: none;
+  width: 30px;
+  height: 30px;
+  background: rgba(13, 0, 255, 0.5);
+  border-radius: 50%;
+  position: fixed;
+  top: -16px;
+  left: -16px;
+  transition: 0.1s;
+}
+
+/* 追加 ------------------------------------*/
+@media (max-width: 600px) {
+  .header {
+    /* headerを固定 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  .logo {
+    text-align: right;
+  }
+  .main-nav {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    width: 50%;
+    background: rgba(255, 255, 255, 0.8);
+    /* background-image: linear-gradient(90deg, transparent 0%, #fff 70%); */
+    transition: transform 0.3s ease-out;
+    transform: translateX(100%);
+  }
+  .main-nav.slide {
+    transform: translateX(-100%);
+  }
+  .main-nav ul {
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 2.5rem;
+  }
+  .main-nav li {
+    text-align: center;
+    margin-left: 0;
+    height: 80px;
+    line-height: 80px;
+  }
+  main h1 {
+    font-size: 30px;
+    line-height: 1.2;
+    flex-wrap: wrap;
+    margin-top: 20svh;
+  }
+  main h1 span {
+    font-size: 20px;
+  }
+  main {
+    width: 100%;
+    transform: translate(-50%, -50%);
+  }
+}
+.btn {
+  display: none;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  position: relative;
+  border: none;
+}
+.btn span,
+.btn span::before,
+.btn span::after {
+  content: '';
+  display: block;
+  width: 26px;
+  height: 3px;
+  border-radius: 2px;
+  background: #5b5b5b;
+  position: absolute;
+  transition: all 0.4s ease-out;
+}
+.btn span::before {
+  bottom: 8px;
+}
+.btn span::after {
+  top: 8px;
+}
+.btn.open span {
+  transform: rotate(180deg);
+}
+.btn.open span::before {
+  bottom: 0;
+  width: 18px;
+  transform: rotate(45deg) translate(2px, 6px);
+}
+.btn.open span::after {
+  top: 0;
+  width: 18px;
+  transform: rotate(-45deg) translate(2px, -6px);
+}
+@media (max-width: 600px) {
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

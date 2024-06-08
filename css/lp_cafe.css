@@ -1,0 +1,350 @@
+@charset "UTF-8";
+
+/* グローバル設定 */
+body {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 1.2rem; /* 16px */
+  color: #ffffff;
+  line-height: 1.5;
+  height: 100vh;
+  max-width: 100%;
+  width: 100vw;
+  background-image: url('../web_images/bg_cafe.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+body::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(16, 15, 55, 0.59);
+  z-index: -1;
+  background-size: cover;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+
+/* HEADER ---------------- */
+.header-container {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.header-logo {
+  width: 240px;
+  line-height: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.header-logo img {
+  width: 100%;
+}
+
+.main-nav {
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.main-nav ul {
+  display: flex;
+  align-items: center;
+}
+
+.main-nav li {
+  margin-left: 40px;
+}
+
+.main-nav a {
+  color: #fff;
+  font-weight: 400;
+  transition: color 0.3s;
+}
+
+.main-nav a:hover {
+  color: #767685;
+}
+
+.main-nav .contact {
+  display: inline-block;
+}
+
+/* MAIN CONTENTS ---------------- */
+main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  text-align: center;
+  color: #fff;
+}
+
+main h1 {
+  margin-bottom: 15px;
+  font-size: 4rem;
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+}
+
+main h1 span {
+  font-size: 2.5rem;
+}
+
+main p {
+  font-size: 1.8rem;
+}
+
+.sp {
+  display: none;
+}
+
+.button-area {
+  margin-top: 60px;
+}
+
+/* 共通のボタンスタイル */
+.button-common {
+  background: #add8e6;
+  border-radius: 15px;
+  padding: 5px 20px;
+  color: #000000 !important;
+  font-weight: 400;
+  letter-spacing: 0.3rem;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  transition: transform 0.5s !important;
+  
+
+}
+
+.button-common:hover {
+  color: #767685;
+  transform: translate(0, -6px);
+}
+
+/* ソーシャルリンク
+ ---------------- */
+ .social-links {
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  text-align: center;
+}
+.social-links a img {
+  width: 24px;
+  height: 24px;
+}
+.social-links a img:hover {
+  opacity: 0.7;
+}
+.social-links a {
+  display: inline-block;
+  transition: all 0.3s;
+  padding: 1rem;
+  color: #c2b0b0;
+}
+
+
+
+/* Cursor Stalker */
+#cursor {
+  pointer-events: none;
+  width: 30px;
+  height: 30px;
+  background: rgba(13, 0, 255, 0.5);
+  border-radius: 50%;
+  position: fixed;
+  top: -16px;
+  left: -16px;
+  transition: transform 0.1s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+ 
+  .sp {
+    display: block;
+  }
+  .header-logo {
+    width: 120px;
+    line-height: 0;
+    position: absolute;
+  }
+
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  .header-container {
+    height: 12vh;
+    background-color: #f3f3f3;
+    height: 70px;
+  }
+
+  .main-nav {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: 88vh;
+    right: -100%;
+    width: 60%;
+    background: rgba(255, 255, 255, 0.9);
+    transition: right 0.5s;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .main-nav.slide {
+    right: -20px;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.8rem;
+    height: 100%;
+  }
+
+  .main-nav li {
+    text-align: center;
+    margin-left: 0;
+    height: 50px;
+    line-height: 50px;
+    border-top: 1px solid #ccc;
+  }
+
+  .main-nav li:last-of-type {
+    border-bottom: 1px solid #ccc;
+  }
+
+  .main-nav a {
+    display: block;
+    color: #5b5b5b;
+  }
+
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .btn span,
+  .btn span::before,
+  .btn span::after {
+    content: '';
+    display: block;
+    width: 35px;
+    height: 4px;
+    border-radius: 2px;
+    background: #5b5b5b;
+    position: absolute;
+    transition: all 0.4s ease-out;
+  }
+
+  .btn span::before {
+    bottom: 12px;
+  }
+
+  .btn span::after {
+    top: 12px;
+  }
+
+  .btn.open span {
+    transform: rotate(180deg);
+  }
+
+  .btn.open span::before {
+    bottom: 0;
+    width: 18px;
+    transform: rotate(45deg) translate(2px, 6px);
+  }
+
+  .btn.open span::after {
+    top: 0;
+    width: 18px;
+    transform: rotate(-45deg) translate(2px, -6px);
+  }
+
+  main {
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.4rem;
+    white-space: normal;
+    margin: 0 auto;
+  }
+
+  .keyvisual {
+    display: block;
+    margin-top: 5rem;
+  }
+
+  main h1 {
+    font-size: 3rem;
+  }
+
+  main h1 span {
+    font-size: 2rem;
+  }
+
+  main p {
+    font-size: 1.2rem;
+  }
+
+  .button-area button {
+    padding: 4px 30px;
+    font-size: 1rem;
+  }
+
+  .button-common {
+    padding: 2px 10px;
+    line-height: 1;
+  }
+}
