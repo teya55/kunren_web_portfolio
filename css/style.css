@@ -291,6 +291,16 @@ main::before {
 .contents-a a:hover {
   color: red;
 }
+.contents-a a::after {
+  content: ' (未着手)';
+  color: blue;
+  padding-left: 5px;
+}
+.contents-a .done::after {
+  content: ' (作成済)';
+  color: red;
+  padding-left: 5px;
+}
 .portfolio-title {
   position: relative;
   font-size: 2rem;
