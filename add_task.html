@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>タスクを追加</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      text-align: center;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+    .header {
+      margin-bottom: 20px;
+    }
+    .header h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .header p {
+      font-size: 16px;
+      color: #555;
+    }
+    input[type="text"] {
+      padding: 10px;
+      width: 200px;
+      margin-right: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      padding: 10px;
+      background-color: #f9f9f9;
+      margin: 5px 0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>タスク管理アプリ</h1>
+      <p>タスクを追加して、完了したらチェックボックスをクリックして管理できます。</p>
+    </div>
+    <div>
+      <input type="text" id="input" placeholder="タスクを入力">
+      <button id="addTodo">タスクを追加</button>
+    </div>
+    <div>
+      <ul id="todoList"></ul>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    // "addTodo" ボタンがクリックされたときに実行される関数を設定
+$("#addTodo").click(function () {
+  // 入力フィールドの値を取得して "inputTodo" 変数に格納
+  const inputTodo = $("input").val();
+  
+  // 取得した入力が空白でないことを確認する
+  if (inputTodo.trim() !== "") {
+    // "todoList" 要素に新しいリスト項目（タスク）を追加
+    $("#todoList").append("<li><input type='checkbox'>" + inputTodo + "</li>");
+    
+    // 入力フィールドを空にする
+    $("input").val("");
+    // 入力フィールドにフォーカスを戻す
+    $("#input").focus();
+
+  }
+});
+
+// ドキュメント内の任意の "input[type=checkbox]" が変更されたときに実行される関数を設定
+$(document).on("change", "input[type=checkbox]", function () {
+  // チェックボックスがチェックされているかどうかを確認
+  if ($(this).is(":checked")) {
+    // チェックされている場合、親要素（li）のテキストに取り消し線を引き、色を灰色に変更
+    $(this).parent().css({
+      "text-decoration": "line-through",
+      "color": "#ccc"
+    });
+  } else {
+    // チェックされていない場合、親要素（li）のテキストの取り消し線を消し、色を黒に戻す
+    $(this).parent().css({
+      "text-decoration": "none",
+      "color": "#000"
+    });
+  }
+});
+  </script>
+</body>
+</html>
