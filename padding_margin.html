@@ -1,61 +1,65 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="description" content="">
     <title>マージンとパディングについて</title>
     <!-- 外部スタイルシートの読み込み -->
     <style>
+        @import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+        @import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+
       /* マージンとパディングの設定 */
-      .box_gray {
-        margin: 20px;
-        padding: 20px;
-        background-color: #f0f0f0;
+      .container {
+          background-color: #f1ebfa;
+          width: 80%;
+          height: auto;
+          margin: 0 auto; /* 中央揃え */
+          padding: 20px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
       }
-      .box_white {
-        margin: 20px;
-        padding: 20px;
-        background-color: #fff;
+      .card {
+          background-color: rgba(255, 255, 112, 0.2); /* 色の透明度を調整 */
+          width: 70%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 20px auto;
+          border: 1px solid blue;
+          padding: 20px;
+          color: blue; /* テキスト色を設定 */
       }
       /* 画像のスタイル */
-      img {
-        width: 100%;
-        height: auto;
+      .card img {
+          width: 180px;
+          height: auto;
+          margin-right: 30px;
       }
       /* 見出しのスタイル */
       h3 {
-        font-size: 16px;
-        margin-top: 10px;
+          font-size: 16px;
       }
+
     </style>
-  </head>
-  <body>
+
+</head>
+<body>
     <!-- 記事表示サンプル -->
-    <div class="box_gray">
-      <article class="box_white">
-        <img src="cmn/img/img_article.jpg">
-        <h3>サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト。</h3>
-      </article>
-      <article class="box_white">
-        <img src="cmn/img/img_article.jpg">
-        <h3>サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト。</h3>
-      </article>
-      <article class="box_white">
-        <img src="cmn/img/img_article.jpg">
-        <h3>サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト。</h3>
-      </article>
+    <div class="container">
+        <article class="card">
+            <img src="images/car_f.png" alt="サンプル画像">
+            <h3>サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト。</h3>
+        </article>
+        <article class="card">
+            <img src="images/car_f.png" alt="サンプル画像">
+            <h3>サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト。</h3>
+        </article>
+        <article class="card">
+            <img src="images/car_f.png" alt="サンプル画像">
+            <h3>サンプルテキストサンプルテキストサンプルテキストサンプルテキストサンプルテキスト。</h3>
+        </article>
     </div>
-  </body>
+</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
