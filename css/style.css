@@ -502,3 +502,8 @@ footer {
 }
 
 /* ポートフォリオでの追加(一時置き) */
+.item_discription {
+  font-size: 1.2rem;
+  color: #cecaf5;
+  text-indent: 1rem;
+}
