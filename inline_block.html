@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ブロック要素とインライン要素の理解</title>
+    <style>
+      /* グローバルスタイルのリセット
+       すべての要素のデフォルトのマージンとパディングをリセットし、
+       一貫したボックスモデルを適用します。
+    */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* bodyの基本スタイル設定
+       ページ全体の余白とテキストの中央揃えを設定します。
+    */
+      body {
+        padding: 20px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      /* h2要素のスタイル設定
+       ブロック要素としての特性を示すためのスタイルを設定します。
+       幅、背景色、境界線、パディングを設定して中央に配置します。
+    */
+      h2 {
+        background-color: #9972f344; /* 背景色を設定 */
+        border: 1px solid #4c00ff; /* 境界線を設定 */
+        padding: 50px; /* パディングを設定 */
+        width: 600px; /* 幅を設定 */
+        margin: 20px auto; /* 中央に配置 */
+      }
+
+      /* span要素のスタイル設定
+       インラインブロック要素としての特性を示すためのスタイルを設定します。
+       背景色、境界線、パディングを設定し、インラインブロックとして表示します。
+    */
+      span {
+        background-color: #f16262; /* 背景色を設定 */
+        border: 1px solid #4c00ff; /* 境界線を設定 */
+        padding: 50px; /* パディングを設定 */
+        display: inline-block; /* インラインブロック要素として設定 */
+        margin: 10px 0; /* 上下に余白を設定 */
+      }
+
+      /* strong要素のスタイル設定
+       テキストを強調するためのスタイルを設定します。
+       色を赤に設定します。
+    */
+      strong {
+        color: red; /* テキスト色を赤に設定 */
+      }
+
+      /* table要素のスタイル設定
+       ブロック要素としての特性を示すためのスタイルを設定します。
+       幅と中央配置を設定します。
+    */
+      table {
+        width: 600px; /* 幅を設定 */
+        margin: 20px auto; /* 中央に配置 */
+        border-collapse: collapse; /* 境界線を一つに結合 */
+      }
+
+      /* td要素のスタイル設定
+       テーブルセルのスタイルを設定します。
+       境界線とパディングを設定します。
+    */
+      td {
+        border: 1px solid #4c00ff; /* 境界線を設定 */
+        padding: 30px; /* パディングを設定 */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- h2要素の使用例 
+       ブロック要素の特性を示すために使用します。
+       テキストを含む大きなボックスとして表示されます。
+  -->
+    <h2>ブロック要素の<strong>大事なポイント</strong>はここです</h2>
+    <h2>ブロック要素</h2>
+
+    <!-- span要素の使用例 
+       インラインブロック要素の特性を示すために使用します。
+       テキストを含む小さなボックスとして横並びに表示されます。
+  -->
+    <span>インライン要素<br />inline-block</span>
+    <span>インライン要素<br />inline-block</span>
+
+    <!-- table要素の使用例 
+       ブロック要素の特性を示すために使用します。
+       行と列を持つテーブルとして表示されます。
+  -->
+    <table>
+      <tr>
+        <td>テーブル</td>
+        <td>ブロック要素です</td>
+      </tr>
+      <tr>
+        <td>テーブル</td>
+        <td>ブロック要素です</td>
+      </tr>
+      <tr>
+        <td>テーブル</td>
+        <td>ブロック要素です</td>
+      </tr>
+    </table>
+  </body>
+</html>
