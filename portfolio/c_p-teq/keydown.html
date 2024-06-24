@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>キーボード入力検知アプリ</title>
+    <style>
+      /* 画面全体のスタイル */
+      body {
+        font-family: Arial, sans-serif; /* フォントスタイル */
+        background-color: #f4f4f4; /* 背景色 */
+        margin: 0; /* 余白なし */
+        padding: 0; /* パディングなし */
+        display: flex; /* フレックスボックス */
+        flex-direction: column; /* 縦方向に並べる */
+        align-items: center; /* 水平方向に中央寄せ */
+        justify-content: center; /* 垂直方向に中央寄せ */
+        height: 100vh; /* 画面全体の高さ */
+        position: relative; /* 相対位置 */
+        overflow: hidden; /* はみ出た内容を隠す */
+      }
+
+      /* 背景画像のスタイル */
+      body::before {
+        content: ''; /* コンテンツなし */
+        position: absolute; /* 絶対位置 */
+        top: 0; /* 上端に揃える */
+        left: 0; /* 左端に揃える */
+        width: 100%; /* 幅を100% */
+        height: 100%; /* 高さを100% */
+        background-image: url('images/typing.jpg'); /* 背景画像 */
+        background-size: cover; /* 背景画像を全体にカバー */
+        filter: blur(5px) brightness(0.7); /* ぼかしと明るさ調整 */
+        opacity: 0.5; /* 半透明にする */
+        z-index: -1; /* 背景を最背面にする */
+      }
+
+      /* タイトルのスタイル */
+      h1 {
+        font-size: 2em; /* フォントサイズ */
+        margin-bottom: 0.5em; /* 下の余白 */
+      }
+
+      /* コンテナのスタイル */
+      .container {
+        background: #fff; /* 背景色 */
+        padding: 20px; /* パディング */
+        border-radius: 8px; /* 角を丸くする */
+        box-shadow: 0 0 20px rgba(0, 0, 255, 0.5); /* ボックスシャドウ */
+        width: 80%; /* 幅を80% */
+        max-width: 600px; /* 最大幅 */
+        text-align: center; /* テキストを中央寄せ */
+      }
+
+      /* テキストエリアのスタイル */
+      .text {
+        max-width: 580px; /* 最大幅 */
+        width: 100%; /* 幅を100% */
+        padding: 10px; /* パディング */
+        border-radius: 4px; /* 角を丸くする */
+        border: 1px solid #ccc; /* 枠線の色とスタイル */
+        font-size: 1em; /* フォントサイズ */
+        margin-bottom: 1em; /* 下の余白 */
+      }
+
+      /* 段落のスタイル */
+      p {
+        font-size: 1.2em; /* フォントサイズ */
+      }
+
+      /* 文字数表示部分のスタイル */
+      .string {
+        font-weight: bold; /* フォントを太字に */
+        color: #333; /* 文字色 */
+      }
+
+      /* クリアボタンのスタイル */
+      #clearButton {
+        background-color: #24a4ed; /* ボタンの背景色 */
+        color: #fff; /* 文字色 */
+        border: none; /* 枠線なし */
+        padding: 5px 40px; /* パディング */
+        box-shadow: 0 2px 3px black; /* ボックスシャドウ */
+        cursor: pointer; /* カーソルをポインタに変更 */
+        border-radius: 5px; /* 角を丸くする */
+        font-size: 1.2rem; /* フォントサイズ */
+        font-weight: bold; /* フォントを太字に */
+        text-transform: uppercase; /* 文字を大文字に */
+        transition: transform 0.2s, box-shadow 0.2s; /* トランジション */
+      }
+
+      /* クリアボタンのホバー時のスタイル */
+      #clearButton:hover {
+        transform: translateY(-2px); /* Y軸方向に移動 */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* ボックスシャドウ */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>キーボード入力文字数の検知アプリ</h1>
+      <p>
+        テキストエリアに入力されたキーの数を <br />
+        JavaScriptで検知するアプリです。
+      </p>
+      <textarea class="text" name="" id="" cols="30" rows="10"></textarea>
+      <p>キー入力数：<span class="string"></span> 文字</p>
+      <button id="clearButton">クリア</button>
+    </div>
+
+    <!-- JavaScript部分 -->
+    <script>
+      // テキストエリアと文字数表示要素を取得
+      const text = document.querySelector('.text')
+      const string = document.querySelector('.string')
+
+      // ページ読み込み時にキー入力数を"0"に初期化
+      document.addEventListener('DOMContentLoaded', () => {
+        string.innerHTML = '0' // 文字数表示を0に設定
+      })
+
+      // テキストエリアにキーが入力されたときのイベントリスナー
+      text.addEventListener('keyup', () => {
+        const inputText = text.value // 入力されたテキストを取得
+        string.innerHTML = inputText.length // 文字数を表示
+      })
+
+      // クリアボタンがクリックされたときのイベントリスナー
+      document.getElementById('clearButton').addEventListener('click', () => {
+        text.value = '' // テキストエリアの内容をクリア
+        string.innerHTML = '0' // 文字数表示を0にリセット
+      })
+    </script>
+  </body>
+</html>
