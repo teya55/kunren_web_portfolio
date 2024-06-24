@@ -1,49 +1,133 @@
-body { font-family: 'Arial', sans-serif; margin: 0; padding: 0;
-background-color: #f4f4f4; color: #333; } header { background-color: #e5e5e5;
-color: #4e8255; padding: 1em 0; } .header-content { display: flex;
-justify-content: space-between; align-items: center; max-width: 100%; margin: 0
-auto; padding: 0 1em; } .header-content li a { font-size: 1.5rem; } .logo {
-max-width: 150px; } nav ul { list-style: none; display: flex; margin: 0;
-padding: 0; } nav ul li { display: inline; } nav ul li a { text-decoration:
-none; color: #8a4343; font-weight: bold; position: relative; display:
-inline-block; transition: background-color 0.3s; } nav ul li a:hover {
-background-color: #555; } /* ホバー時のアフター効果 */ header nav ul li a::after
-{ content: ''; position: absolute; bottom: -3px; left: 0; width: 100%; height:
-2px; background: rgb(242, 255, 0); /* アフターエフェクトのカラー */ transform:
-scale(0, 1); transform-origin: right top; transition: transform 0.3s; } /*
-ホバー時のエフェクト */ header nav ul li a:hover::after { transform: scale(1,
-1); transform-origin: left top; } .first-view { width: 100%; height: calc(100vh
-- 70px); /* Header height (70px) is subtracted */ overflow: hidden; }
-.first-view img { width: 100%; height: 100%; object-fit: cover; display: block;
-} .content { display: flex; justify-content: space-between; max-width: 90%;
-margin: 1em auto; padding: 0; } main { flex: 1; } section { margin-bottom: 2em;
-position: relative; color: white; text-align: center; padding: 2em;
-background-size: cover; background-position: center; } .section-home {
-background-image: url('assets/images/cafe-7454951_1280.jpg'); } .section-about {
-background-image: url('assets/images/cafe-7454951_1280.jpg'); } .section-menu {
-background-image: url('assets/images/coffee-5495609_1280.jpg'); }
-.section-access { background-image: url('assets/images/office.jpg'); }
-.section-content { background-color: rgba(0, 0, 0, 0.5); /*
-背景を半透明にしてテキストの可読性を高める */ padding: 2em; border-radius: 10px;
-box-shadow: 0 5px 10px rgb(0 0 0 / 40%); } section h1, section h2 { color: #fff;
-background-color: rgba(0, 0, 0, 0.7); padding: 0.5em; border-radius: 5px;
-display: inline-block; } section p { color: #fff; } table { width: 100%;
-border-collapse: collapse; margin: 1em 0; } table, th, td { border: 1px solid
-#ddd; } td { padding: 1em; text-align: left; } tr:nth-child(even) {
-background-color: rgba(255, 255, 255, 0.3); } .info-button { background-color:
-#ffeb3b; border: none; padding: 0.5em 1em; font-size: 1em; cursor: pointer;
-border-radius: 5px; transition: background-color 0.3s; } .info-button:hover {
-background-color: #ffd700; } aside { background-color: #fff; padding: 1em;
-box-shadow: 0 5px 10px rgb(0 0 0 / 40%); max-width: 345px; /* 幅を15%広げる */
-text-align: center; flex: 0 0 345px; /* 幅を15%広げる */ border-radius: 10px; }
-aside h2 { color: #333; } footer { background-color: #333; color: #fff;
-text-align: center; padding: 1em 0; position: relative; bottom: 0; width: 100%;
-font-size: 0.8em; /* フォントサイズを小さくする */ font-weight: bold; /*
-フォントウェイトを太くする */ } @media (min-width: 600px) { aside { margin: 1em;
-} } @media (min-width: 1024px) { .logo { max-width: 200px; } header { padding:
-0.5rem 1rem; } nav ul { gap: 5em; } main { padding: 0 2em; } footer {
-background-color: #e5e5e5; color: #8a4343; text-align: center; padding: 0.5rem
-0; position: relative; bottom: 0; width: 100%; font-size: 0.8em; /*
-フォントサイズを小さくする */ font-weight: bold; /* フォントウェイトを太くする
-*/ } } .header-content img { width: 100px; height: auto; object-fit: cover;
-display: block; margin: 0; padding: 0; }
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Webサイト ポートフォリオ</title>
+	<link rel="icon" href="images/favicon2.png">
+	<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+	<!-- GooleFont -->
+
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<!-- HEADERとNAVセクション -->
+	<header class="header">
+		<div class="header-container wrapper">
+			<h1 class="header-logo"><a href="#works-contents"><img src="images/logo2.svg" width="120" height="40" alt="profile"></a></h1>
+			<nav class="main-nav">
+				<ul>
+					<li><a href="#">Top</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#Works">Works</a></li>
+				</ul>
+			</nav>
+			<button type="button" class="btn" aria-label="メニューを開きます">
+				<span></span>
+			</button>
+		</div><!-- ./header-container -->
+	</header>
+	<main>
+		<!-- 1枚目の画像を背景として持つセクション -->
+		<div class="keyvisual">
+			<p>Tetsuji<br>Yashiki</p>
+		</div>
+		<!-- ABOUTセクション -->
+		<section id="about">
+			<div class="wrapper">
+				<h2 class="sub-title">About</h2>
+				<div class="about-container">
+					<img src="images/img_about.jpg" width="640" height="640" alt="TETSUJI YASHIKI">
+					<div class="about-text">
+						<div class="profile">
+							<h3>PROFILE</h3>
+							<p>私は今年の２月から５月までの４か月間、大阪府職業訓練<span> "Webデザイン＋プログラミング基礎科" </span>でWEB製作やプログラミング技術の職業訓練を受講していました。このコースでは、HTML、CSS、JavaScript、およびPHPを使用したウェブ開発の基礎から、PhotoshopやIllustratorを活用したグラフィックデザイン技術に至るまで、幅広いスキルを学ぶことができました。</p><br>
+
+							<p>訓練では、ユーザーにとって魅力的かつ機能的なウェブサイトを設計・実装するための技術を学びました。これまでに、UI/UXの設計、動的サイトの構築、そしてポートフォリオサイトの製作と様々な実習を行ってきました。これらの経験を生かし、Webデザイナー、Webプログラマーとして、クリエイティブで技術的な解決策を提供するプロフェッショナルになることを目指しています。</p><br>
+
+							<p>将来的には、技術とデザインの両面で優れたウェブサイトを作り上げることで、ユーザーにとって価値ある経験を提供していきたいと考えております。また、チームで協力しながら新しいアイデアを形にしていく過程を大切にし、常に学び続けることで、業界での成長を遂げていきたいと思います。どうぞよろしくお願いいたします。</p>
+						</div>
+						<div class="skill">
+							<h3>SKILL</h3>
+							<p>
+								職業訓練歴 <br>
+								Adobe：Photoshop、Illustrator、XD、PremierePro <br>
+								言語：HTML、CSS、PHP、JavaScript
+							</p>
+							<p>
+								学習歴 <br>
+								Vs-Code、Git、Git-hub、Docker、AWS、Chat-Gpt、他　<br>
+								言語：Pytho、Linux
+								
+
+							</p>
+						</div>
+
+					</div><!-- /.about-text -->
+				</div><!-- /.about-container -->
+			</div><!-- /.wrapper -->
+		</section><!-- /#about -->
+		<!-- 2枚目の画像を背景として持つセクション -->
+		<section id="Works">
+			<div class="wrapper Works-container">
+				<h2 class="sub-title"><a href="#portfolio">Works<br><span>こちらをクリック！</span></a></h2>
+				
+				<h3 id="portfolio" class="portfolio-title">ポートフォリオ集</h3>
+				<ul class="WorksTitle-container" id="works-contents">
+					<li>
+						<a href="design_teq.html"><img src="images/design_1.jpg" width="640" height="424" alt="design-teq"></a>
+						<h3>グラフィックデザイン技術</h3>
+						<div class="contents-a">
+							<a class="disabled" href="#">1.IllustratorやPhotoshop(gimp)でバナー作成</a> <br>
+							<a class="disabled" href="#">2.adbe-XD(figma)デザインカンプ作成</a><br>
+							<a class="disabled" href="#">3.fontawsome、フリー動画、Gfont他</a>
+						</div> <br>
+						<p>PhotoshopやIllustrator、adbe-XDを使用したWebデザインとデザインカンプ作成<br>【計画】デザインカンプ(figma)、バナーやLP(gimp)をリンク付け予定、使用した技術を紹介</p>
+					</li>
+					<li>
+						<a href="coding_teq.html"><img src="images/coding_1.jpg" width="640" height="424" alt="coding-teq"></a>
+						<h3>コーディング、プログラミング技術</h3>
+						<div class="contents-a">
+							<div class="item">
+							<a class="done" href="padding_margin.html" target="blank">1.PaddingとMarginの使い方</a> 
+							</div>
+							<div class="itme">
+							<a class="done" href="inline_block.html" target="_blank">2.inline要素とblock要素の違い</a> 
+							<p class="item_discription">※inline要素とblock要素の違いを理解するために作成</p>
+							</div>	
+							<div class="item">
+							<a class="done" href="add_task.html" target="_blank">3.タスク管理アプリ</a>
+							<p class="item_discription">※ユーザーがタスクを追加し、完了したタスクにチェックを入れて管理できるアプリ</p>
+							</div>
+							<div class="itme">
+							<a class="disabled" href="#">4.PHP</a>
+							</div>
+							<br>
+						<p>HTMLでのWEB基本構成、CSSで各種装飾、javaScriptとPHPで動的なサイトの作成<br>JavaScriptとPHPの基本から応用までを学び、Webフォームの処理やセッション管理を実践。実用的なスキル<br>【計画】htmlとcssをベースにしてjsやPHPで部分的なプログラムを製作、使用した技術を紹介</p>
+					</li>
+					<li>
+						<a href="website_teq.html"><img src="images/webSite.jpg" width="640" height="424" alt="web-site-teq"></a>
+						<h3>WEBサイト製作</h3>
+						<div class="contents-a">
+							<a class="done" href="lp_cafe.html" target="_blank">1.カフェの仮想LP</a> <br>
+							<a class="done" href="siltas/index.html" target="=_blank">2.職業訓練での実習課題</a> <br>
+							<a class="disabled" href="#">3.jqueryを用いた画像スライドのサイト</a> <br>
+							<a class="disabled" href="#">4.PHPを用いたお問い合わせサイト</a>
+						</div> <br>
+						<p>サイト構成、デザイン、視覚的魅力と機能性を両立させ、SEO対策も考慮する</p>
+						<p>【計画】簡単な架空の商業サイトを制作予定、使用した技術を紹介</p>
+					</li>
+				</ul>
+			</div><!-- /.wrapper -->
+		</section><!-- /# Works -->
+	</main>
+
+	<footer class="footer">
+		<p><small>All Rights Reserved 2024 &copy; Tetsuji Yashiki</small></p>
+	</footer>
+	<button type="button" class="page-top" aria-label="ページトップへスクロールします"></button>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="js/script.js"></script>
+
+</body>
+</html>
