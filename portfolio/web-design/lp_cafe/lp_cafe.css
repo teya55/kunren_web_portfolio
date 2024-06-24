@@ -9,7 +9,7 @@ body {
   height: 100vh;
   max-width: 100%;
   width: 100vw;
-  background-image: url('../web_images/bg_cafe.jpg');
+  background-image: url('web_images/bg_cafe.jpg');
   background-size: cover;
   background-position: center;
   position: relative;
@@ -144,8 +144,6 @@ main p {
   text-align: center;
   display: inline-block;
   transition: transform 0.5s !important;
-  
-
 }
 
 .button-common:hover {
@@ -155,7 +153,7 @@ main p {
 
 /* ソーシャルリンク
  ---------------- */
- .social-links {
+.social-links {
   position: fixed;
   bottom: 20px;
   width: 100%;
@@ -178,8 +176,6 @@ main p {
   color: #c2b0b0;
 }
 
-
-
 /* Cursor Stalker */
 #cursor {
   pointer-events: none;
@@ -195,7 +191,6 @@ main p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
- 
   .sp {
     display: block;
   }
